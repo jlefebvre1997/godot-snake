@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://blaqe5rqd5u01"]
+
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_srfju"]
+[ext_resource type="FontFile" uid="uid://r5ttqaxnuvgk" path="res://assets/MaldiniBold.ttf" id="1_x0cw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5emtp"]
+bg_color = Color(0.458824, 0, 0.141176, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_srfju")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -120.0
+offset_right = 196.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5emtp")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 50.0
+offset_right = 48.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_x0cw5")
+theme_override_font_sizes/font_size = 65
+text = "Game Over !"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -106.0
+offset_right = 150.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_x0cw5")
+theme_override_font_sizes/font_size = 45
+text = "Recommencer"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
